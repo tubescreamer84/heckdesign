@@ -195,7 +195,34 @@ header{
     color:#fff;
 }
 
+.orange-text{
+    color:#ee5c29;
+}
 
+.scroll-down{
+    width: 5rem;
+    height: 5rem;
+    left: 0;
+    right: 0;
+    font-size: 5rem !important;
+    margin: 0 auto;
+    position: fixed;
+    z-index: 100;
+    bottom: 5rem;
+    color: #fff;
+    cursor: pointer;
+      transition: all .25s ease-in-out !important;
+    -moz-transition: all .25s ease-in-out;
+    -webkit-transition: all .25s ease-in-out;
+    /* background: #fff; */
+}
+
+.front-page h2{
+    color:#b5b5b5;
+}
+.scroll-down:hover{
+ color:#ccc;
+}
 
 .intro .wrapper{
     /* -webkit-transform: rotate(1deg);

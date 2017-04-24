@@ -31,22 +31,28 @@ $('.menu  li').click(function(e){
 	 
 
 
-
-
-
 	// $('.overlay').removeClass('show2');
 	// $('.overlay').removeClass('previous');
 
 });
 
+  $('.scroll-down').click(function(){
+    scrollMe('down');
+    console.log('click');
+  });
+
+  $('.logo a').click(function(){
+    scrollMe('home');
+  });
+
   //On Arrow press
   $('html').keydown(function(e){
     console.log(e);
 
-    if(e.key == 'ArrowDown'){
+    if(e.key == 'ArrowDown' || e.keyCode == '39'){
       console.log('Arrow Down');
       scrollMe('down');
-    }else if(e.key == 'ArrowUp'){
+    }else if(e.key == 'ArrowUp' || e.keyCode == '37'){
       console.log('Arrow Up');
       scrollMe('up');
     }
@@ -155,9 +161,13 @@ function scrollMe(direction){
       history.pushState($(active).next().attr('data-section'),null,$(active).next().attr('data-section'));
       $(active).removeClass('active')
       $(active).next().addClass('active');
+      $('.menu').addClass('background');
     }
    
 
+  }else if(direction == 'home'){
+     history.pushState('',null,'/~Josh/heck-design3/');
+     $('.menu').removeClass('background');
   }
   else{
      if($(active).prev('li').length){
@@ -165,6 +175,7 @@ function scrollMe(direction){
        $('.'+$(active).prev().attr('data-section')).addClass('show');
        if($(active).prev().attr('data-section') == 'home'){
             history.pushState('',null,'/~Josh/heck-design3/');
+              $('.menu').removeClass('background');
        }else{
         history.pushState($(active).prev().attr('data-section'),null,$(active).prev().attr('data-section'));
        }
