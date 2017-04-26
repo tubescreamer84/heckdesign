@@ -7,8 +7,8 @@ $(document).ready(function(){
 
 $('.menu  li').click(function(e){
 	e.preventDefault();
-	console.log('click');
-	console.log($(this).attr('data-section'));
+	//console.log('click');
+	//console.log($(this).attr('data-section'));
 	// $('.overlay').addClass('hide');
 
 	// $('.overlay.show').addClass('previous');
@@ -19,14 +19,14 @@ $('.menu  li').click(function(e){
       $(this).addClass('active');
      	$('.overlay').removeClass('show');
      	history.pushState(data,null,'/heck-design3');
-     	$('.menu').removeClass('background');
+     	// $('.menu').removeClass('background');
 	 }else{
 		  $('.overlay').removeClass('show');
       $('.menu li').removeClass('active');
       $(this).addClass('active');
      	$('.overlay.'+$(this).attr('data-section')).addClass('show');
      	history.pushState(data,null,data);
-     	$('.menu').addClass('background');
+     	// $('.menu').addClass('background');
      }
 	 
 
@@ -38,7 +38,7 @@ $('.menu  li').click(function(e){
 
   $('.scroll-down').click(function(){
     scrollMe('down');
-    console.log('click');
+    //console.log('click');
   });
 
   $('.logo a').click(function(){
@@ -47,13 +47,13 @@ $('.menu  li').click(function(e){
 
   //On Arrow press
   $('html').keydown(function(e){
-    console.log(e);
+    //console.log(e);
 
     if(e.key == 'ArrowDown' || e.keyCode == '39'){
-      console.log('Arrow Down');
+     // console.log('Arrow Down');
       scrollMe('down');
     }else if(e.key == 'ArrowUp' || e.keyCode == '37'){
-      console.log('Arrow Up');
+     // console.log('Arrow Up');
       scrollMe('up');
     }
 
@@ -66,20 +66,20 @@ $('.menu  li').click(function(e){
   });
 
 $(window).onpopstate = function(event) {
-	console.log('pop2');
-  console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
+	//console.log('pop2');
+  //console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
 };
 
 window.addEventListener('popstate', function(e) {
   // e.state is equal to the data-attribute of the last image we clicked
-  console.log('pop');
+ // console.log('pop');
 });
 
 
 $(".overlay")
 .on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
  function(e){
- 	console.log(e);
+ 	//console.log(e);
 
  	// $('overlay').each
  	if(!$('.overlay').hasClass('show')){
@@ -117,7 +117,7 @@ $(".overlay")
 
 $('html').bind('mousewheel DOMMouseScroll', function (e) {
     var delta = (e.originalEvent.wheelDelta || -e.originalEvent.detail);
-    // console.log(delta);
+    console.log(delta);
 
     if(locked === true){
       return false;
@@ -126,7 +126,7 @@ $('html').bind('mousewheel DOMMouseScroll', function (e) {
     locked = true;
 
     if (delta < 0) {
-         console.log('You scrolled down');
+         //console.log('You scrolled down');
          scrollMe('down');
         
       //   $('.overlay').removeClass('show');
@@ -136,7 +136,7 @@ $('html').bind('mousewheel DOMMouseScroll', function (e) {
      	// $('a.about').addClass('active');
     } else if (delta > 0) {
         scrollMe('up');
-         console.log('You scrolled up');
+        // console.log('You scrolled up');
    //      $('a.about').removeClass('active');
 			// $('.overlay').removeClass('show');
    //   	history.pushState('',null,'/heck-design3');

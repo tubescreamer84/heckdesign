@@ -143,19 +143,41 @@ header{
 .menu{
     position: absolute;
     top: 0;
-    bottom: 0;
     z-index: 4;
+    left: 0;
+    right: 0;
     display: flex;
-    height: 100%;
+    flex-direction: column;
+    /* height: 100%; */
     align-items: center;
     transition: all .65s ease-in-out !important;
     -moz-transition: all .65s ease-in-out;
     -webkit-transition: all .65s ease-in-out;
 }
 
+.menu .background{
+    background: rgba(66, 66, 66, .5); 
+}
+
 .background{
-    padding-right:6.6rem;
+    /*padding-right:6.6rem;*/
     background: rgba(0,0,0,.5);
+   
+}
+
+.menu .border{
+    width:0;
+}
+
+.menu .active .border{
+    height: .2rem;
+    width: 100%;
+    /* width: 0; */
+    background: #fff;
+    transition: all .25s ease-in-out !important;
+    -moz-transition: all .25s ease-in-out;
+    -webkit-transition: all .25s ease-in-out;
+    text-align: center;
 }
 
 .jumbotron ul{
@@ -163,10 +185,17 @@ header{
     text-align: center;
 }
 
+.jumbotron li.active{
+    /*border-bottom:.2rem solid #fff;*/
+}
+
 .jumbotron ul li{
-     /* display: inline-block; */
+      display: inline-block; 
     text-align: left;
-    /* margin-right: 2em; */
+     margin-right: 2em; 
+     transition: all .25s ease-in-out !important;
+    -moz-transition: all .25s ease-in-out;
+    -webkit-transition: all .25s ease-in-out;
 }
 
 .jumbotron ul li a{
@@ -400,7 +429,7 @@ header{
 .overlay{
   position: absolute;
     top: 0;
-    left: 14rem;
+    left: 0;
     bottom: 0;
     right: 0;
     /* background: rgba(0,0,0,.85); */
