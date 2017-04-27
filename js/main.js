@@ -41,6 +41,11 @@ $('.menu  li').click(function(e){
     //console.log('click');
   });
 
+  $('.scroll-up').click(function(){
+    scrollMe('up');
+    //console.log('click');
+  });
+
   $('.logo a').click(function(){
     scrollMe('home');
   });
@@ -147,7 +152,7 @@ $('html').bind('mousewheel DOMMouseScroll', function (e) {
     timeout = setTimeout(function(){
       //unlock
       locked = false;
-    },1000)
+    },1200)
 });
 
 
@@ -185,6 +190,12 @@ function scrollMe(direction){
      }
 
 
+  }
+    if($('.overlay').hasClass('show')){
+    console.log('josh');
+    $('body').removeClass('front-page');
+  }else{
+    $('body').addClass('front-page');
   }
 
 

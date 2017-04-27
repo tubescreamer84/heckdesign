@@ -228,19 +228,48 @@ header{
     color:#ee5c29;
 }
 
+.front-page .scroll-up{
+    visibility: hidden;
+   /* left: 0;
+    right: 0;
+    bottom: 2.5rem;
+    transform:rotate(0deg);*/
+    
+}
 .scroll-down{
+    left: initial;
+    right: 2.5rem;
+    /*transform: rotate(-90deg);*/
+    bottom: 25vw;
     width: 5rem;
     height: 5rem;
-    left: 0;
-    right: 0;
+    
     font-size: 5rem !important;
     margin: 0 auto;
     position: fixed;
     z-index: 100;
-    bottom: 5rem;
+   
     color: #fff;
     cursor: pointer;
       transition: all .25s ease-in-out !important;
+    -moz-transition: all .25s ease-in-out;
+    -webkit-transition: all .25s ease-in-out;
+    /* background: #fff; */
+}
+
+.scroll-up{
+    width: 5rem;
+    height: 5rem;
+    left: 2.5rem;
+    /*right: 0;*/
+    font-size: 5rem !important;
+    margin: 0 auto;
+    position: fixed;
+    z-index: 100;
+    bottom: 25vw;
+    color: #fff;
+    cursor: pointer;
+    transition: all .25s ease-in-out !important;
     -moz-transition: all .25s ease-in-out;
     -webkit-transition: all .25s ease-in-out;
     /* background: #fff; */
